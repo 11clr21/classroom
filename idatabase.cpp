@@ -24,7 +24,7 @@ void IDatabase::ininDatabase()
     database.setDatabaseName(aFile);
 
     if (!database.open()) {
-        // 5. 如果失败，打印最关键的错误信息
+        // 5. 如果失败，最关键的错误信息
         qDebug() << "failed";
         qDebug() << "failed_reson" << database.lastError().text();
     } else {
