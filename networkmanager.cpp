@@ -57,7 +57,7 @@ void NetworkManager::onNoticeReply(QNetworkReply *reply)
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray data = reply->readAll();
         QJsonDocument doc = QJsonDocument::fromJson(data);
-        // 假设返回格式是 {"title": "xxx"}
+        // 返回格式是 {"title": "xxx"}
         if (doc.isObject()) {
             QString title = doc.object().value("title").toString();
             emit noticeDataReceived(title);
