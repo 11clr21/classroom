@@ -20,7 +20,7 @@ void IDatabase::ininDatabase()
 
 
     // 4. 尝试连接数据库
-    database = QSqlDatabase::addDatabase("QSQLITE"); // 再次确认拼写
+    database = QSqlDatabase::addDatabase("QSQLITE");
     database.setDatabaseName(aFile);
 
     if (!database.open()) {
