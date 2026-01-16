@@ -15,7 +15,7 @@ Worker::Worker(QObject *parent) : QObject(parent) {}
 void Worker::batchImportData(const QJsonArray &data)
 {
     QSqlDatabase db = IDatabase::getInstance().getDatabase();
-    if (!db.transaction()) { // 开启事务，提高插入速度
+    if (!db.transaction()) {
         emit workFinished(false, "无法开启数据库事务");
         return;
     }
