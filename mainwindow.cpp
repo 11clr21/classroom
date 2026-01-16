@@ -79,7 +79,7 @@ void MainWindow::fetchAvailableDates()
         }
     }
 
-    // 自动选中有课的第一天
+    // 开始自动锁定有课的第一天
     if (!availableDates.isEmpty()) {
         ui->dateTimeEdit->setDate(availableDates.first());
     } else {
