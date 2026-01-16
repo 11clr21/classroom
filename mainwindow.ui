@@ -39,7 +39,7 @@ QLabel {
        <item row="0" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="titile_label">
            <property name="font">
             <font>
              <pointsize>9</pointsize>
