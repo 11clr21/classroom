@@ -34,7 +34,6 @@ MainWindow::MainWindow(QWidget *parent)
     classTableModel->setHeaderData(1, Qt::Horizontal, "班级名称");
     classTableModel->setHeaderData(2, Qt::Horizontal, "教室号");
     classTableModel->setHeaderData(3, Qt::Horizontal, "校区");
-    // classTableModel->setHeaderData(4, Qt::Horizontal, "状态"); // is_active
 
     // 执行查询（相当于 SELECT * FROM class_room）
     classTableModel->select();
@@ -105,7 +104,6 @@ void MainWindow::on_dateTimeEdit_dateChanged(const QDate &date)
 
             QString dateStr = date.toString("yyyy-MM-dd");
 
-            // 【修改点】把字段名 'content' 改成了 'notice_title'
             QString sql = QString("SELECT notice_title FROM notice_info WHERE publish_time = '%1'").arg(dateStr);
 
             qDebug() << "拼接后的 SQL:" << sql; // 调试用
@@ -130,7 +128,7 @@ void MainWindow::on_dateTimeEdit_dateChanged(const QDate &date)
             }
         }
 
-        // 【关键修改】当日期改变时，根据之前的选择刷新课程信息
+        // 当日期改变时，根据之前的选择刷新课程信息
         // 检查用户之前是否选择了教室
         if (!currentRoomNumber.isEmpty()) {
             queryRoomCourseInfo(); // 调用教室查询
@@ -165,7 +163,7 @@ void MainWindow::on_classList_clicked(const QModelIndex &index)
     QString roomNumber = classTableModel->data(classTableModel->index(row, 2)).toString();
     currentRoomNumber = roomNumber;
 
-    // 【修改】获取班级名称 (第2列，索引是1)
+    // 获取班级名称 (第2列，索引是1)
     QString className = classTableModel->data(classTableModel->index(row, 1)).toString();
     currentClassName = className; // 保存班级名称
 
@@ -195,7 +193,7 @@ void MainWindow::queryRoomCourseInfo() {
     QSqlQuery query(db);
     QString dateStr = currentSelectedDate.toString("yyyy-MM-dd");
 
-    // 【关键修改】使用 JOIN 连接两个表，连接条件是 course_room = room_number
+    // 使用 JOIN 连接两个表，连接条件是 course_room = room_number
     QString sql = QString(
                       "SELECT ci.course_name, ci.course_room, ci.start_time, ci.end_time, ci.teacher_name, cr.class_name "
                       "FROM course_info AS ci "
@@ -262,9 +260,8 @@ void MainWindow::queryClassCourseInfo() {
     QSqlQuery query(db);
     QString dateStr = currentSelectedDate.toString("yyyy-MM-dd");
 
-    // 【关键修改】连接条件改为 class_id = id
-    // 注意：请确保 course_info 表中确实存在 class_id 字段，且与 class_room 的 id 对应
-    // 如果只有 class_name，请修改为: ON ci.class_name = cr.class_name
+    // 连接条件改为 class_id = id
+    // 确保 course_info 表中确实存在 class_id 字段，且与 class_room 的 id 对应
     QString sql1 = QString(
                        "SELECT ci.course_name, ci.course_room, ci.start_time, ci.end_time, ci.teacher_name, cr.class_name "
                        "FROM course_info AS ci "
