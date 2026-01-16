@@ -391,7 +391,7 @@ void MainWindow::on_updata_clicked()
     QDateTime currentTime = QDateTime::currentDateTime();
     ui->newtime->setText(currentTime.toString("yyyy-MM-dd hh:mm:ss"));
 
-    qDebug() << "开始刷新数据...";
+    qDebug() << "begin update the data……";
 
     // --- 功能 2：刷新班级列表 ---
     if (classTableModel->select()) {
