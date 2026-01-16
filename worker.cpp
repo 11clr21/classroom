@@ -40,7 +40,7 @@ void Worker::batchImportData(const QJsonArray &data)
             break;
         }
 
-        // 模拟耗时，演示线程效果
+        // 模拟演示线程效果
         QThread::msleep(5);
     }
 
