@@ -3,10 +3,12 @@
 #include <QJsonArray>
 #include <QDebug>
 
+
 NetworkManager::NetworkManager(QObject *parent) : QObject(parent)
 {
     m_manager = new QNetworkAccessManager(this);
 }
+
 
 void NetworkManager::fetchClassList()
 {
@@ -21,6 +23,7 @@ void NetworkManager::fetchClassList()
     });
 }
 
+
 void NetworkManager::fetchNotices(const QString &date)
 {
     // 模拟带参数的请求
@@ -32,6 +35,7 @@ void NetworkManager::fetchNotices(const QString &date)
         onNoticeReply(reply);
     });
 }
+
 
 void NetworkManager::onClassListReply(QNetworkReply *reply)
 {
@@ -46,6 +50,7 @@ void NetworkManager::onClassListReply(QNetworkReply *reply)
     }
     reply->deleteLater();
 }
+
 
 void NetworkManager::onNoticeReply(QNetworkReply *reply)
 {
