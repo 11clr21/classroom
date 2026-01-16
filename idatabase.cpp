@@ -87,7 +87,6 @@ void IDatabase::revertPatientEdit()
 }
 
 
-
 QString IDatabase::userLogin(QString userName, QString password)
 {
     //  return "loginOK";
@@ -96,6 +95,7 @@ QString IDatabase::userLogin(QString userName, QString password)
     query.bindValue(":USER", userName);
     query.exec();
     qDebug() << query.lastQuery() << query.first();
+    //设置debug在控制台里面查看输出
     if (query.first() && query.value("username").isValid()) {
         QString passwd = query.value("password").toString();
         if (passwd == password) {
@@ -110,11 +110,6 @@ QString IDatabase::userLogin(QString userName, QString password)
         return "wrongUsername";
     }
 }
-
-
-
-
-
 
 IDatabase::IDatabase(QObject *parent)
     : QObject{parent}
