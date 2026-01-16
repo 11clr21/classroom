@@ -12,7 +12,7 @@ NetworkManager::NetworkManager(QObject *parent) : QObject(parent)
 
 void NetworkManager::fetchClassList()
 {
-    // 模拟请求地址，实际替换为你的服务器 API
+    // 模拟请求地址，替换为你的服务器 API
     QUrl url("http://your-api.com/api/classes");
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
