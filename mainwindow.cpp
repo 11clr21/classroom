@@ -87,7 +87,7 @@ void MainWindow::fetchAvailableDates()
     }
 }
 
-// 核心拦截函数：当用户修改日期时直接触发查询和显示
+// 核心拦截函数：当用户修改日期时触发查询和显示
 void MainWindow::on_dateTimeEdit_dateChanged(const QDate &date)
 {
     // 检查这个日期是否在我们的“可用列表”里
