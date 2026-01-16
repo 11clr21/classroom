@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_scrollTimer->start(1000);
 }
 
-// 查询并缓存数据库中所有有课的日期
+// 查询且缓存用户选中的日期
 void MainWindow::fetchAvailableDates()
 {
     QSqlDatabase db = IDatabase::getInstance().getDatabase();
