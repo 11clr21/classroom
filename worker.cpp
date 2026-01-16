@@ -23,7 +23,7 @@ void Worker::batchImportData(const QJsonArray &data)
     QSqlQuery query(db);
     bool hasError = false;
 
-    // 模拟循环插入 1000 条数据，这是主线程绝对不能做的
+    // 模拟循环插入 1000 条数据
     for (const QJsonValue &value : data) {
         QJsonObject obj = value.toObject();
         // 假设数据结构
