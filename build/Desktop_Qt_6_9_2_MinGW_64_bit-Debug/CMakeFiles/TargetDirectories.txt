@@ -1,0 +1,5 @@
+D:/Qt/Classroom/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/Classroom.dir
+D:/Qt/Classroom/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/Qt/Classroom/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/Qt/Classroom/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/Classroom_autogen_timestamp_deps.dir
+D:/Qt/Classroom/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/CMakeFiles/Classroom_autogen.dir
