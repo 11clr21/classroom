@@ -73,7 +73,7 @@ void MainWindow::fetchAvailableDates()
         QString dateStr = query.value("course_date").toString();
         QDate d = QDate::fromString(dateStr, "yyyy-MM-dd");
 
-        // 确保日期转换成功才添加
+        // 确保日期转换成然后添加
         if (d.isValid()) {
             availableDates.append(d);
         }
